@@ -1,0 +1,62 @@
+--- 
+title: "Learning Python Notes"
+author: "Lingyun Zhang"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+links-as-notes: true
+colorlinks: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Preface {-}
+
+# Basics
+
+# Exercises
+
+## Powwer, dictionary and bar chart
+
+**Problem:** Find the exact value of 2^10000^; create a dictionary, which stores the frequencies of the digits (0-9); create a bar chart for the frequencies.
+
+
+```{r, eval=FALSE}
+import matplotlib.pyplot as plt
+
+a = 2 ** 10000
+# print(a)
+
+s = str(a)
+freq = dict()
+
+for ch in s:
+    if ch not in freq:
+        freq[ch] = 1
+    else:
+        freq[ch] += 1
+
+plt.bar(freq.keys(), freq.values(), color='g')
+plt.show()
+```
+
+## function, list of repeated values
+
+**Problem:** Make a function, which returns cumulative sums when an input (a positive integer) is given.
+
+```{r, eval=FALSE}
+def my_cusum(x):
+    # x must be a positive integer
+    the_result = [0] * x # create a list of x 0's
+    t = 0
+    for i in range(x):
+        t = t + (i + 1)
+        the_result[i] = t
+    return the_result
+```
+
+
