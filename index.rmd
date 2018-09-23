@@ -44,7 +44,7 @@ plt.bar(freq.keys(), freq.values(), color='g')
 plt.show()
 ```
 
-## function, list of repeated values
+## Function, list of repeated values
 
 **Problem:** Make a function, which returns cumulative sums when an input (a positive integer) is given.
 
@@ -57,6 +57,24 @@ def my_cusum(x):
         t = t + (i + 1)
         the_result[i] = t
     return the_result
+```
+
+## Simulation, birthday problem
+
+**Problem:** Find the the answer to the *birthday problem* (https://en.wikipedia.org/wiki/Birthday_problem) by simulation.
+```{r, eval=FALSE}
+import numpy as np
+
+def simu_birthday_problem(N = 10000, people_number = 23):
+    indicator = [0] * N
+    a = np.arange(365) # array([0, 1, ..., 364])
+    for i in range(N):
+        a_sample = np.random.choice(a, size = people_number, replace = True)
+        b = set(a_sample)
+        if len(a_sample) > len(b):
+            indicator[i] = 1
+    the_result = sum(indicator) / N
+    return the_result # accuray: truth +- 0.01 with 95% confidence
 ```
 
 
