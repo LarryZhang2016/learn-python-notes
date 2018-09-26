@@ -77,4 +77,33 @@ def simu_birthday_problem(N = 10000, people_number = 23):
     return the_result # accuray: truth +- 0.01 with 95% confidence
 ```
 
+## Simulation, tosses of a fair coin
+
+**Problem:** Simulate 10000 tosses of a fair coin and plot the relative frequencies.
+```{r, eval=FALSE}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simu_toss_coin(N = 10000):
+    cum_re = [0] * N # cumulative results
+    prop_re = [0] * N
+    popu = np.arange(2) # array([0, 1])
+    the_sample = np.random.choice(popu, size = N, replace = True)
+    cum_re[0] = the_sample[0]
+    prop_re[0] = cum_re[0]
+    for i in range(1, N):
+        cum_re[i] = cum_re[i - 1] + the_sample[i]
+        prop_re[i] = cum_re[i] / (i + 1)
+    start = N//3       
+    x = np.arange(start, N)       
+    plt.plot(x, prop_re[start:N])
+    epsi = 1 / np.sqrt(N)
+    plt.axhline(0.5 - epsi, color = "red") # lower limit line
+    plt.axhline(0.5 + epsi, color = "red") # upper limit line
+    plt.xlabel("Number of tosses")
+    plt.ylabel("Relative frequency of heads")
+    plt.title("Simulation of tosses of a fair coin")
+    plt.grid(True)
+    plt.show()
+```
 
