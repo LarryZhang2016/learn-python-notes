@@ -20,6 +20,29 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Exercises
 
+## Reverse a string
+
+**Problem:** Write a function which accepts a string as its input and returns the reversed string.  
+
+```{r, eval = FALSE}
+# version 1
+def rever_str_1(s):
+    n = len(s)
+    re = ''
+    while True:
+        n = n - 1
+        if n >= 0:
+            re = re + s[n]
+        else:
+            break
+    return re
+
+# version 2
+def rever_str_2(s):
+    return s[::-1]
+```
+
+
 ## Powwer, dictionary and bar chart
 
 **Problem:** Find the exact value of 2^10000^; create a dictionary, which stores the frequencies of the digits (0-9); create a bar chart for the frequencies.
