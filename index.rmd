@@ -43,7 +43,29 @@ def rever_str_2(s):
 ```
 
 
-## Powwer, dictionary and bar chart
+## Rotate a string
+
+**Problem**: This is Exercise 8.5 of *Think Python*: "Write a function called rotate_word that takes a string and an integer as parameters, and returns a new string that contains the letters from the original string rotated by the given amount." NB: Only rotate lowercase letters.
+```{r, eval=FALSE}
+def rotate_word(s, shift = 3):
+    n = len(s)
+    new_s = ''
+    if n == 0:
+        print("The string cannot be empty! None is returned!")
+        return None
+    else:
+        for i in range(n):
+            d = ord(s[i]) - ord('a')
+            if d >= 0 and d <= 25:
+                new_s = new_s + chr((d + shift) % 26 + ord('a'))
+            else:
+                new_s = new_s + s[i]
+        return new_s
+```
+
+
+
+## Power, dictionary and bar chart
 
 **Problem:** Find the exact value of 2^10000^; create a dictionary, which stores the frequencies of the digits (0-9); create a bar chart for the frequencies.
 
