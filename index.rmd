@@ -64,6 +64,72 @@ def rotate_word(s, shift = 3):
 ```
 
 
+## Finding 'bookkeeper'
+
+**Problem:** (If necessary, download the file words.txt from http://thinkpython2.com/code/words.txt) This is Exercise 9.7 in *Think Python*. Find all the words having three consecutive double letters from words.txt
+
+```{r, eval=FALSE}
+# helper function 
+def word_2_number(word):
+    n = len(word)
+    if n < 2:
+        return [0]
+    else:
+        result = [0] * (n - 1)
+        for i in range(n - 1):
+            result[i] = ord(word[i + 1]) - ord(word[i])
+        return result
+
+# helper function    
+def number_of_0(a_list):
+    count = 0
+    for number in a_list:
+        if number == 0:
+            count = count + 1
+    return count
+
+# helper function
+def positions_of_0(a_list):
+    n = number_of_0(a_list)
+    if n >= 1:
+        result = [0] * n
+        m = len(a_list)
+        c = -1
+        for i in range(m):
+            if a_list[i] == 0:
+                c = c + 1
+                result[c] = i
+        return result
+            
+# helper function
+def consecutive_diff(a_list):
+    n = len(a_list)
+    if n <= 1:
+        return str(a_list)
+    else:
+        re = ''
+        for i in range(n - 1):
+            re = re + str(a_list[i + 1] - a_list[i])
+    return re
+
+# fhandle = open("words.txt")
+import urllib.request
+fhandle = urllib.request.urlopen("http://thinkpython2.com/code/words.txt")
+
+for line in fhandle:
+    # word = line.strip()
+    word = line.decode().strip()
+    number_str = word_2_number(word)
+    n_0 = number_of_0(number_str)
+    if n_0 < 3:
+        next
+    else:
+        p_0 = positions_of_0(number_str)
+        the_str = consecutive_diff(p_0)
+        if '22' in the_str:
+            print(word)
+```
+
 
 ## Power, dictionary and bar chart
 
