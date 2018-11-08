@@ -131,6 +131,65 @@ for line in fhandle:
 ```
 
 
+## Using bisection algorithm
+
+**Problem:** This is Exercise 10.10 in *Think Python*.
+
+```{r, eval=FALSE}
+# using bisection to find if word is in a_list
+def find_if_in(a_list, word):
+    new_list = sorted(a_list)
+    while True:
+        n = len(new_list)
+        if n == 0:
+            return False
+        elif n == 1:
+            if word == new_list[0]:
+                return True
+            else:
+                return False
+        else:
+            n = n // 2
+            if word == new_list[n]:
+                return True
+            elif word > new_list[n]:
+                del new_list[:(n + 1)]
+            else:
+                del new_list[n:]
+```
+
+## Reverse pairs and panlindromes
+
+**Problem:** This is Exercise 10.11 in *Think Python*.
+
+```{r, eval=FALSE}
+# read words.txt in
+import urllib.request
+fhandle = urllib.request.urlopen("http://thinkpython2.com/code/words.txt")
+
+word_set = set() # initialize an empty set
+rev_word_set = set()
+
+for line in fhandle:
+    word = line.decode().strip()
+    word_set.add(word) 
+    rev_word_set.add(word[::-1])
+
+the_joint = rev_word_set.intersection(word_set)
+
+panlindrome = 0
+
+for word in the_joint:
+    rev_w = word[::-1]
+    if rev_w == word:
+        print(word)
+        panlindrome = panlindrome + 1
+    
+
+print("There are ", len(the_joint), " reverse pairs. There are ", panlindrome, " panlindromes.")
+```
+
+
 ## Power, dictionary and bar chart
 
 **Problem:** Find the exact value of 2^10000^; create a dictionary, which stores the frequencies of the digits (0-9); create a bar chart for the frequencies.
