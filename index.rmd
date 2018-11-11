@@ -189,6 +189,50 @@ for word in the_joint:
 print("There are ", len(the_joint), " reverse pairs. There are ", panlindrome, " panlindromes.")
 ```
 
+## List and dictionary
+
+**Problem:** This is Exercise 12.1 in *Think Python*.
+
+```{r,  eval=FALSE}
+list_1 = ['a']
+for i in range(1, 26):
+    list_1 = list_1 + [chr(ord('a') + i)]
+    
+list_2 = [0] * 26
+
+my_dict = dict(list(zip(list_1, list_2)))
+
+fhandle = open("words.txt")
+
+# version 1
+# =============================================================================
+# for line in fhandle:
+#     word = line.strip()
+#     for letter in my_dict.keys():
+#         if letter in word:
+#             my_dict[letter] = my_dict[letter] + 1
+# =============================================================================
+
+# version 2
+for line in fhandle:
+    word = line.strip()
+    for s in word:
+        my_dict[s] = my_dict.get(s, 0) + 1 # count number of letters
+        
+total = sum(my_dict.values())
+
+for key in my_dict.keys():
+    my_dict[key] = my_dict[key] / total # find relative frequency
+    
+import matplotlib.pyplot as plt
+
+plt.bar(my_dict.keys(), my_dict.values(), color='g')
+plt.show()
+
+#my_dict = sorted(my_dict, key=my_dict.get)
+```
+
+
 
 ## Power, dictionary and bar chart
 
