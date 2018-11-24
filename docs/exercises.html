@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Learning Python Notes</title>
+  <meta name="description" content="Learning Python Notes">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Learning Python Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Learning Python Notes" />
+  
+  
+  
+
+<meta name="author" content="Lingyun Zhang">
+
+
+<meta name="date" content="2018-11-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="basics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a></li>
+<li class="chapter" data-level="2" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>2</b> Exercises</a><ul>
+<li class="chapter" data-level="2.1" data-path="exercises.html"><a href="exercises.html#reverse-a-string"><i class="fa fa-check"></i><b>2.1</b> Reverse a string</a></li>
+<li class="chapter" data-level="2.2" data-path="exercises.html"><a href="exercises.html#rotate-a-string"><i class="fa fa-check"></i><b>2.2</b> Rotate a string</a></li>
+<li class="chapter" data-level="2.3" data-path="exercises.html"><a href="exercises.html#finding-bookkeeper"><i class="fa fa-check"></i><b>2.3</b> Finding ‘bookkeeper’</a></li>
+<li class="chapter" data-level="2.4" data-path="exercises.html"><a href="exercises.html#using-bisection-algorithm"><i class="fa fa-check"></i><b>2.4</b> Using bisection algorithm</a></li>
+<li class="chapter" data-level="2.5" data-path="exercises.html"><a href="exercises.html#reverse-pairs-and-panlindromes"><i class="fa fa-check"></i><b>2.5</b> Reverse pairs and panlindromes</a></li>
+<li class="chapter" data-level="2.6" data-path="exercises.html"><a href="exercises.html#list-and-dictionary"><i class="fa fa-check"></i><b>2.6</b> List and dictionary</a></li>
+<li class="chapter" data-level="2.7" data-path="exercises.html"><a href="exercises.html#power-dictionary-and-bar-chart"><i class="fa fa-check"></i><b>2.7</b> Power, dictionary and bar chart</a></li>
+<li class="chapter" data-level="2.8" data-path="exercises.html"><a href="exercises.html#function-list-of-repeated-values"><i class="fa fa-check"></i><b>2.8</b> Function, list of repeated values</a></li>
+<li class="chapter" data-level="2.9" data-path="exercises.html"><a href="exercises.html#simulation-birthday-problem"><i class="fa fa-check"></i><b>2.9</b> Simulation, birthday problem</a></li>
+<li class="chapter" data-level="2.10" data-path="exercises.html"><a href="exercises.html#simulation-tosses-of-a-fair-coin"><i class="fa fa-check"></i><b>2.10</b> Simulation, tosses of a fair coin</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learning Python Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercises" class="section level1">
+<h1><span class="header-section-number">2</span> Exercises</h1>
+<div id="reverse-a-string" class="section level2">
+<h2><span class="header-section-number">2.1</span> Reverse a string</h2>
+<p><strong>Problem:</strong> Write a function which accepts a string as its input and returns the reversed string.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># version 1</span>
+def <span class="kw">rever_str_1</span>(s)<span class="op">:</span>
+<span class="st">    </span>n =<span class="st"> </span><span class="kw">len</span>(s)
+    re =<span class="st"> &#39;&#39;</span>
+    <span class="cf">while</span> True<span class="op">:</span>
+<span class="st">        </span>n =<span class="st"> </span>n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+        <span class="cf">if</span> n <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span>
+<span class="st">            </span>re =<span class="st"> </span>re <span class="op">+</span><span class="st"> </span>s[n]
+        <span class="cf">else</span><span class="op">:</span>
+<span class="st">            </span><span class="cf">break</span>
+    return re
+
+<span class="co"># version 2</span>
+def <span class="kw">rever_str_2</span>(s)<span class="op">:</span>
+<span class="st">    </span>return s[<span class="op">::-</span><span class="dv">1</span>]</code></pre></div>
+</div>
+<div id="rotate-a-string" class="section level2">
+<h2><span class="header-section-number">2.2</span> Rotate a string</h2>
+<p><strong>Problem</strong>: This is Exercise 8.5 of <em>Think Python</em>: “Write a function called rotate_word that takes a string and an integer as parameters, and returns a new string that contains the letters from the original string rotated by the given amount.” NB: Only rotate lowercase letters.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">def <span class="kw">rotate_word</span>(s, <span class="dt">shift =</span> <span class="dv">3</span>)<span class="op">:</span>
+<span class="st">    </span>n =<span class="st"> </span><span class="kw">len</span>(s)
+    new_s =<span class="st"> &#39;&#39;</span>
+    <span class="cf">if</span> n <span class="op">==</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span>
+<span class="st">        </span><span class="kw">print</span>(<span class="st">&quot;The string cannot be empty! None is returned!&quot;</span>)
+        return None
+    <span class="cf">else</span><span class="op">:</span>
+<span class="st">        </span><span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(n)<span class="op">:</span>
+<span class="st">            </span>d =<span class="st"> </span><span class="kw">ord</span>(s[i]) <span class="op">-</span><span class="st"> </span><span class="kw">ord</span>(<span class="st">&#39;a&#39;</span>)
+            <span class="cf">if</span> d <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span> and d <span class="op">&lt;=</span><span class="st"> </span><span class="dv">25</span><span class="op">:</span>
+<span class="st">                </span>new_s =<span class="st"> </span>new_s <span class="op">+</span><span class="st"> </span><span class="kw">chr</span>((d <span class="op">+</span><span class="st"> </span>shift) % <span class="dv">26</span> <span class="op">+</span><span class="st"> </span><span class="kw">ord</span>(<span class="st">&#39;a&#39;</span>))
+            <span class="cf">else</span><span class="op">:</span>
+<span class="st">                </span>new_s =<span class="st"> </span>new_s <span class="op">+</span><span class="st"> </span>s[i]
+        return new_s</code></pre></div>
+</div>
+<div id="finding-bookkeeper" class="section level2">
+<h2><span class="header-section-number">2.3</span> Finding ‘bookkeeper’</h2>
+<p><strong>Problem:</strong> (If necessary, download the file words.txt from <a href="http://thinkpython2.com/code/words.txt" class="uri">http://thinkpython2.com/code/words.txt</a>) This is Exercise 9.7 in <em>Think Python</em>. Find all the words having three consecutive double letters from words.txt</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># helper function </span>
+def <span class="kw">word_2_number</span>(word)<span class="op">:</span>
+<span class="st">    </span>n =<span class="st"> </span><span class="kw">len</span>(word)
+    <span class="cf">if</span> n <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span><span class="op">:</span>
+<span class="st">        </span>return [<span class="dv">0</span>]
+    <span class="cf">else</span><span class="op">:</span>
+<span class="st">        </span>result =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)
+        <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">:</span>
+<span class="st">            </span>result[i] =<span class="st"> </span><span class="kw">ord</span>(word[i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>]) <span class="op">-</span><span class="st"> </span><span class="kw">ord</span>(word[i])
+        return result
+
+<span class="co"># helper function    </span>
+def <span class="kw">number_of_0</span>(a_list)<span class="op">:</span>
+<span class="st">    </span>count =<span class="st"> </span><span class="dv">0</span>
+    <span class="cf">for</span> number <span class="cf">in</span> a_list<span class="op">:</span>
+<span class="st">        </span><span class="cf">if</span> number <span class="op">==</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span>
+<span class="st">            </span>count =<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+    return count
+
+<span class="co"># helper function</span>
+def <span class="kw">positions_of_0</span>(a_list)<span class="op">:</span>
+<span class="st">    </span>n =<span class="st"> </span><span class="kw">number_of_0</span>(a_list)
+    <span class="cf">if</span> n <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span>
+<span class="st">        </span>result =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>n
+        m =<span class="st"> </span><span class="kw">len</span>(a_list)
+        c =<span class="st"> </span><span class="op">-</span><span class="dv">1</span>
+        <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(m)<span class="op">:</span>
+<span class="st">            </span><span class="cf">if</span> a_list[i] <span class="op">==</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span>
+<span class="st">                </span>c =<span class="st"> </span>c <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+                result[c] =<span class="st"> </span>i
+        return result
+            
+<span class="co"># helper function</span>
+def <span class="kw">consecutive_diff</span>(a_list)<span class="op">:</span>
+<span class="st">    </span>n =<span class="st"> </span><span class="kw">len</span>(a_list)
+    <span class="cf">if</span> n <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span>
+<span class="st">        </span>return <span class="kw">str</span>(a_list)
+    <span class="cf">else</span><span class="op">:</span>
+<span class="st">        </span>re =<span class="st"> &#39;&#39;</span>
+        <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">:</span>
+<span class="st">            </span>re =<span class="st"> </span>re <span class="op">+</span><span class="st"> </span><span class="kw">str</span>(a_list[i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>a_list[i])
+    return re
+
+<span class="co"># fhandle = open(&quot;words.txt&quot;)</span>
+import urllib.request
+fhandle =<span class="st"> </span><span class="kw">urllib.request.urlopen</span>(<span class="st">&quot;http://thinkpython2.com/code/words.txt&quot;</span>)
+
+<span class="cf">for</span> line <span class="cf">in</span> fhandle<span class="op">:</span>
+<span class="st">    </span><span class="co"># word = line.strip()</span>
+<span class="st">    </span>word =<span class="st"> </span><span class="kw">line.decode</span>()<span class="kw">.strip</span>()
+    number_str =<span class="st"> </span><span class="kw">word_2_number</span>(word)
+    n_<span class="dv">0</span> =<span class="st"> </span><span class="kw">number_of_0</span>(number_str)
+    <span class="cf">if</span> n_<span class="dv">0</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span><span class="op">:</span>
+<span class="st">        </span><span class="cf">next</span>
+    <span class="cf">else</span><span class="op">:</span>
+<span class="st">        </span>p_<span class="dv">0</span> =<span class="st"> </span><span class="kw">positions_of_0</span>(number_str)
+        the_str =<span class="st"> </span><span class="kw">consecutive_diff</span>(p_<span class="dv">0</span>)
+        <span class="cf">if</span> <span class="st">&#39;22&#39;</span> <span class="cf">in</span> the_str<span class="op">:</span>
+<span class="st">            </span><span class="kw">print</span>(word)</code></pre></div>
+</div>
+<div id="using-bisection-algorithm" class="section level2">
+<h2><span class="header-section-number">2.4</span> Using bisection algorithm</h2>
+<p><strong>Problem:</strong> This is Exercise 10.10 in <em>Think Python</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># using bisection to find if word is in a_list</span>
+def <span class="kw">find_if_in</span>(a_list, word)<span class="op">:</span>
+<span class="st">    </span>new_list =<span class="st"> </span><span class="kw">sorted</span>(a_list)
+    <span class="cf">while</span> True<span class="op">:</span>
+<span class="st">        </span>n =<span class="st"> </span><span class="kw">len</span>(new_list)
+        <span class="cf">if</span> n <span class="op">==</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span>
+<span class="st">            </span>return False
+        elif n <span class="op">==</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span>
+<span class="st">            </span><span class="cf">if</span> word <span class="op">==</span><span class="st"> </span>new_list[<span class="dv">0</span>]<span class="op">:</span>
+<span class="st">                </span>return True
+            <span class="cf">else</span><span class="op">:</span>
+<span class="st">                </span>return False
+        <span class="cf">else</span><span class="op">:</span>
+<span class="st">            </span>n =<span class="st"> </span>n <span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="dv">2</span>
+            <span class="cf">if</span> word <span class="op">==</span><span class="st"> </span>new_list[n]<span class="op">:</span>
+<span class="st">                </span>return True
+            elif word <span class="op">&gt;</span><span class="st"> </span>new_list[n]<span class="op">:</span>
+<span class="st">                </span>del new_list[<span class="op">:</span>(n <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)]
+            <span class="cf">else</span><span class="op">:</span>
+<span class="st">                </span>del new_list[n<span class="op">:</span>]</code></pre></div>
+</div>
+<div id="reverse-pairs-and-panlindromes" class="section level2">
+<h2><span class="header-section-number">2.5</span> Reverse pairs and panlindromes</h2>
+<p><strong>Problem:</strong> This is Exercise 10.11 in <em>Think Python</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># read words.txt in</span>
+import urllib.request
+fhandle =<span class="st"> </span><span class="kw">urllib.request.urlopen</span>(<span class="st">&quot;http://thinkpython2.com/code/words.txt&quot;</span>)
+
+word_set =<span class="st"> </span><span class="kw">set</span>() <span class="co"># initialize an empty set</span>
+rev_word_set =<span class="st"> </span><span class="kw">set</span>()
+
+<span class="cf">for</span> line <span class="cf">in</span> fhandle<span class="op">:</span>
+<span class="st">    </span>word =<span class="st"> </span><span class="kw">line.decode</span>()<span class="kw">.strip</span>()
+    <span class="kw">word_set.add</span>(word) 
+    <span class="kw">rev_word_set.add</span>(word[<span class="op">::-</span><span class="dv">1</span>])
+
+the_joint =<span class="st"> </span><span class="kw">rev_word_set.intersection</span>(word_set)
+
+panlindrome =<span class="st"> </span><span class="dv">0</span>
+
+<span class="cf">for</span> word <span class="cf">in</span> the_joint<span class="op">:</span>
+<span class="st">    </span>rev_w =<span class="st"> </span>word[<span class="op">::-</span><span class="dv">1</span>]
+    <span class="cf">if</span> rev_w <span class="op">==</span><span class="st"> </span>word<span class="op">:</span>
+<span class="st">        </span><span class="kw">print</span>(word)
+        panlindrome =<span class="st"> </span>panlindrome <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+    
+
+<span class="kw">print</span>(<span class="st">&quot;There are &quot;</span>, <span class="kw">len</span>(the_joint), <span class="st">&quot; reverse pairs. There are &quot;</span>, panlindrome, <span class="st">&quot; panlindromes.&quot;</span>)</code></pre></div>
+</div>
+<div id="list-and-dictionary" class="section level2">
+<h2><span class="header-section-number">2.6</span> List and dictionary</h2>
+<p><strong>Problem:</strong> This is Exercise 12.1 in <em>Think Python</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list_<span class="dv">1</span> =<span class="st"> </span>[<span class="st">&#39;a&#39;</span>]
+<span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(<span class="dv">1</span>, <span class="dv">26</span>)<span class="op">:</span>
+<span class="st">    </span>list_<span class="dv">1</span> =<span class="st"> </span>list_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>[<span class="kw">chr</span>(<span class="kw">ord</span>(<span class="st">&#39;a&#39;</span>) <span class="op">+</span><span class="st"> </span>i)]
+    
+list_<span class="dv">2</span> =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span><span class="dv">26</span>
+
+my_dict =<span class="st"> </span><span class="kw">dict</span>(<span class="kw">list</span>(<span class="kw">zip</span>(list_<span class="dv">1</span>, list_<span class="dv">2</span>)))
+
+fhandle =<span class="st"> </span><span class="kw">open</span>(<span class="st">&quot;words.txt&quot;</span>)
+
+<span class="co"># version 1</span>
+<span class="co"># =============================================================================</span>
+<span class="co"># for line in fhandle:</span>
+<span class="co">#     word = line.strip()</span>
+<span class="co">#     for letter in my_dict.keys():</span>
+<span class="co">#         if letter in word:</span>
+<span class="co">#             my_dict[letter] = my_dict[letter] + 1</span>
+<span class="co"># =============================================================================</span>
+
+<span class="co"># version 2</span>
+<span class="cf">for</span> line <span class="cf">in</span> fhandle<span class="op">:</span>
+<span class="st">    </span>word =<span class="st"> </span><span class="kw">line.strip</span>()
+    <span class="cf">for</span> s <span class="cf">in</span> word<span class="op">:</span>
+<span class="st">        </span>my_dict[s] =<span class="st"> </span><span class="kw">my_dict.get</span>(s, <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="co"># count number of letters</span>
+        
+total =<span class="st"> </span><span class="kw">sum</span>(<span class="kw">my_dict.values</span>())
+
+<span class="cf">for</span> key <span class="cf">in</span> <span class="kw">my_dict.keys</span>()<span class="op">:</span>
+<span class="st">    </span>my_dict[key] =<span class="st"> </span>my_dict[key] <span class="op">/</span><span class="st"> </span>total <span class="co"># find relative frequency</span>
+    
+import matplotlib.pyplot as plt
+
+<span class="kw">plt.bar</span>(<span class="kw">my_dict.keys</span>(), <span class="kw">my_dict.values</span>(), <span class="dt">color=</span><span class="st">&#39;g&#39;</span>)
+<span class="kw">plt.show</span>()
+
+<span class="co">#my_dict = sorted(my_dict, key=my_dict.get)</span></code></pre></div>
+</div>
+<div id="power-dictionary-and-bar-chart" class="section level2">
+<h2><span class="header-section-number">2.7</span> Power, dictionary and bar chart</h2>
+<p><strong>Problem:</strong> Find the exact value of 2<sup>10000</sup>; create a dictionary, which stores the frequencies of the digits (0-9); create a bar chart for the frequencies.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">import matplotlib.pyplot as plt
+
+a =<span class="st"> </span><span class="dv">2</span> <span class="op">**</span><span class="st"> </span><span class="dv">10000</span>
+<span class="co"># print(a)</span>
+
+s =<span class="st"> </span><span class="kw">str</span>(a)
+freq =<span class="st"> </span><span class="kw">dict</span>()
+
+<span class="cf">for</span> ch <span class="cf">in</span> s<span class="op">:</span>
+<span class="st">    </span><span class="cf">if</span> ch not <span class="cf">in</span> freq<span class="op">:</span>
+<span class="st">        </span>freq[ch] =<span class="st"> </span><span class="dv">1</span>
+    <span class="cf">else</span><span class="op">:</span>
+<span class="st">        </span>freq[ch] <span class="op">+</span><span class="er">=</span><span class="st"> </span><span class="dv">1</span>
+
+<span class="kw">plt.bar</span>(<span class="kw">freq.keys</span>(), <span class="kw">freq.values</span>(), <span class="dt">color=</span><span class="st">&#39;g&#39;</span>)
+<span class="kw">plt.show</span>()</code></pre></div>
+</div>
+<div id="function-list-of-repeated-values" class="section level2">
+<h2><span class="header-section-number">2.8</span> Function, list of repeated values</h2>
+<p><strong>Problem:</strong> Make a function, which returns cumulative sums when an input (a positive integer) is given.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">def <span class="kw">my_cusum</span>(x)<span class="op">:</span>
+<span class="st">    </span><span class="co"># x must be a positive integer</span>
+<span class="st">    </span>the_result =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>x <span class="co"># create a list of x 0&#39;s</span>
+    t =<span class="st"> </span><span class="dv">0</span>
+    <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(x)<span class="op">:</span>
+<span class="st">        </span>t =<span class="st"> </span>t <span class="op">+</span><span class="st"> </span>(i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)
+        the_result[i] =<span class="st"> </span>t
+    return the_result</code></pre></div>
+</div>
+<div id="simulation-birthday-problem" class="section level2">
+<h2><span class="header-section-number">2.9</span> Simulation, birthday problem</h2>
+<p><strong>Problem:</strong> Find the the answer to the <em>birthday problem</em> (<a href="https://en.wikipedia.org/wiki/Birthday_problem" class="uri">https://en.wikipedia.org/wiki/Birthday_problem</a>) by simulation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">import numpy as np
+
+def <span class="kw">simu_birthday_problem</span>(<span class="dt">N =</span> <span class="dv">10000</span>, <span class="dt">people_number =</span> <span class="dv">23</span>)<span class="op">:</span>
+<span class="st">    </span>indicator =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>N
+    a =<span class="st"> </span><span class="kw">np.arange</span>(<span class="dv">365</span>) <span class="co"># array([0, 1, ..., 364])</span>
+    <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(N)<span class="op">:</span>
+<span class="st">        </span>a_sample =<span class="st"> </span><span class="kw">np.random.choice</span>(a, <span class="dt">size =</span> people_number, <span class="dt">replace =</span> True)
+        b =<span class="st"> </span><span class="kw">set</span>(a_sample)
+        <span class="cf">if</span> <span class="kw">len</span>(a_sample) <span class="op">&gt;</span><span class="st"> </span><span class="kw">len</span>(b)<span class="op">:</span>
+<span class="st">            </span>indicator[i] =<span class="st"> </span><span class="dv">1</span>
+    the_result =<span class="st"> </span><span class="kw">sum</span>(indicator) <span class="op">/</span><span class="st"> </span>N
+    return the_result <span class="co"># accuray: truth +- 0.01 with 95% confidence</span></code></pre></div>
+</div>
+<div id="simulation-tosses-of-a-fair-coin" class="section level2">
+<h2><span class="header-section-number">2.10</span> Simulation, tosses of a fair coin</h2>
+<p><strong>Problem:</strong> Simulate 10000 tosses of a fair coin and plot the relative frequencies.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">import numpy as np
+import matplotlib.pyplot as plt
+
+def <span class="kw">simu_toss_coin</span>(<span class="dt">N =</span> <span class="dv">10000</span>)<span class="op">:</span>
+<span class="st">    </span>cum_re =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>N <span class="co"># cumulative results</span>
+    prop_re =<span class="st"> </span>[<span class="dv">0</span>] <span class="op">*</span><span class="st"> </span>N
+    popu =<span class="st"> </span><span class="kw">np.arange</span>(<span class="dv">2</span>) <span class="co"># array([0, 1])</span>
+    the_sample =<span class="st"> </span><span class="kw">np.random.choice</span>(popu, <span class="dt">size =</span> N, <span class="dt">replace =</span> True)
+    cum_re[<span class="dv">0</span>] =<span class="st"> </span>the_sample[<span class="dv">0</span>]
+    prop_re[<span class="dv">0</span>] =<span class="st"> </span>cum_re[<span class="dv">0</span>]
+    <span class="cf">for</span> i <span class="cf">in</span> <span class="kw">range</span>(<span class="dv">1</span>, N)<span class="op">:</span>
+<span class="st">        </span>cum_re[i] =<span class="st"> </span>cum_re[i <span class="op">-</span><span class="st"> </span><span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>the_sample[i]
+        prop_re[i] =<span class="st"> </span>cum_re[i] <span class="op">/</span><span class="st"> </span>(i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)
+    start =<span class="st"> </span>N<span class="op">/</span><span class="er">/</span><span class="dv">3</span>       
+    x =<span class="st"> </span><span class="kw">np.arange</span>(start, N)       
+    <span class="kw">plt.plot</span>(x, prop_re[start<span class="op">:</span>N])
+    epsi =<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">np.sqrt</span>(N)
+    <span class="kw">plt.axhline</span>(<span class="fl">0.5</span> <span class="op">-</span><span class="st"> </span>epsi, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="co"># lower limit line</span>
+    <span class="kw">plt.axhline</span>(<span class="fl">0.5</span> <span class="op">+</span><span class="st"> </span>epsi, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="co"># upper limit line</span>
+    <span class="kw">plt.xlabel</span>(<span class="st">&quot;Number of tosses&quot;</span>)
+    <span class="kw">plt.ylabel</span>(<span class="st">&quot;Relative frequency of heads&quot;</span>)
+    <span class="kw">plt.title</span>(<span class="st">&quot;Simulation of tosses of a fair coin&quot;</span>)
+    <span class="kw">plt.grid</span>(True)
+    <span class="kw">plt.show</span>()</code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
